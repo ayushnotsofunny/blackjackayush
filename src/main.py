@@ -15,7 +15,7 @@ class Deck:
         self.cards = []
         suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
         ranks = {
-            "A": 11, "2": 2, "3": 3, "4": 4, "5": 5,
+            "A": 1, "2": 2, "3": 3, "4": 4, "5": 5,
             "6": 6, "7": 7, "8": 8, "9": 9, "10": 10,
             "J": 10, "Q": 10, "K": 10
         }
@@ -35,12 +35,7 @@ class Hand:
         self.cards.append(c)
 
     def value(self):
-        total = sum(c.value for c in self.cards)
-        aces = sum(1 for c in self.cards if c.rank == "A")
-        while total > 21 and aces > 0:
-            total -= 10
-            aces -= 1
-        return total
+        return sum(c.value for c in self.cards)
 
     def show(self, name):
         if not self.cards:
@@ -136,9 +131,6 @@ class Monster(Player):
     def heart_ai(self, c, deck, ps):
         s = self.hand.value()
         ns = s + c.value
-
-        if c.rank == "A" and ns > 21:
-            ns -= 10
 
         print("monster deciding...")
         time.sleep(2)
