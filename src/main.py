@@ -14,7 +14,7 @@ class Deck:
     def __init__(self):
         self.cards=[]
         suits=["Heart","Diamond","Club","Spade"]
-        id={
+        ranks={
             "A": 1,
             "2": 2,
             "3": 3,
