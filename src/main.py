@@ -68,31 +68,33 @@ class Player:
                 print(self.name + " drew " + str(c))
 
                 if c.suit == "Hearts":
-                    r = self.heart(c, deck)
-                    if r == "stop":
-                        return
+                    self.heart(c, deck)
                 else:
                     self.hand.add(c)
             else:
                 print("type hit or stand")
 
     def heart(self, c, deck):
-        print("1 keep  2 discard  3 stop")
+        print("heart card")
+        print("1 keep  2 discard")
+
         while True:
             x = input("choose: ").strip()
+
             if x == "1":
                 self.hand.add(c)
-                return "go"
+                print("kept " + str(c))
+                return
+
             elif x == "2":
+                print("discarded " + str(c))
                 n = deck.draw()
-                print("redrew " + str(n))
+                print("new card " + str(n))
                 self.hand.add(n)
-                return "go"
-            elif x == "3":
-                print("stopped, card not counted")
-                return "stop"
+                return
+
             else:
-                print("choose 1 2 or 3")
+                print("choose 1 or 2")
 
 class Monster(Player):
     def __init__(self):
@@ -122,9 +124,7 @@ class Monster(Player):
             time.sleep(2)
 
             if c.suit == "Hearts":
-                r = self.heart_ai(c, deck, ps)
-                if r == "stop":
-                    return
+                self.heart_ai(c, deck, ps)
             else:
                 self.hand.add(c)
 
@@ -135,25 +135,14 @@ class Monster(Player):
         print("monster deciding...")
         time.sleep(2)
 
-        if ns == 21:
+        if ns <= 21:
             self.hand.add(c)
             print("monster keeps " + str(c))
-            return "go"
-
-        if ns > 21:
+        else:
             print("monster discards " + str(c))
             n = deck.draw()
-            print("monster redraws " + str(n))
+            print("monster new card " + str(n))
             self.hand.add(n)
-            return "go"
-
-        if s >= ps and s >= 18:
-            print("monster stops")
-            return "stop"
-
-        self.hand.add(c)
-        print("monster keeps " + str(c))
-        return "go"
 
 class Game:
     def __init__(self):
