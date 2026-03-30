@@ -44,9 +44,9 @@ class Hand:
 
     def show(self, name):
         if not self.cards:
-            print(name, ": No cards")
+            print(name + ": No cards")
             return
-        print(name + ": " + ", ".join(str(c) for c in self.cards) + " |", self.value())
+        print(name + ": " + ", ".join(str(c) for c in self.cards) + " | " + str(self.value()))
 
 class Player:
     def __init__(self, name):
@@ -59,18 +59,18 @@ class Player:
             self.hand.show(self.name)
 
             if self.hand.value() > 21:
-                print(self.name, "busted")
+                print(self.name + " busted")
                 return
 
-            x = input("hit or stand: ").lower()
+            x = input("hit or stand: ").strip().lower()
 
             if x == "stand":
-                print(self.name, "stands")
+                print(self.name + " stands")
                 return
 
-            if x == "hit":
+            elif x == "hit":
                 c = deck.draw()
-                print(self.name, "drew", c)
+                print(self.name + " drew " + str(c))
 
                 if c.suit == "Hearts":
                     r = self.heart(c, deck)
@@ -78,22 +78,26 @@ class Player:
                         return
                 else:
                     self.hand.add(c)
+            else:
+                print("type hit or stand")
 
     def heart(self, c, deck):
         print("1 keep  2 discard  3 stop")
         while True:
-            x = input("choose: ")
+            x = input("choose: ").strip()
             if x == "1":
                 self.hand.add(c)
                 return "go"
-            if x == "2":
+            elif x == "2":
                 n = deck.draw()
-                print("redrew", n)
+                print("redrew " + str(n))
                 self.hand.add(n)
                 return "go"
-            if x == "3":
-                print("stopped, not counted")
+            elif x == "3":
+                print("stopped, card not counted")
                 return "stop"
+            else:
+                print("choose 1 2 or 3")
 
 class Monster(Player):
     def __init__(self):
@@ -119,7 +123,7 @@ class Monster(Player):
             time.sleep(2)
 
             c = deck.draw()
-            print("monster drew", c)
+            print("monster drew " + str(c))
             time.sleep(2)
 
             if c.suit == "Hearts":
@@ -136,17 +140,18 @@ class Monster(Player):
         if c.rank == "A" and ns > 21:
             ns -= 10
 
+        print("monster deciding...")
         time.sleep(2)
 
         if ns == 21:
             self.hand.add(c)
-            print("monster keeps", c)
+            print("monster keeps " + str(c))
             return "go"
 
         if ns > 21:
-            print("monster discards", c)
+            print("monster discards " + str(c))
             n = deck.draw()
-            print("monster redraws", n)
+            print("monster redraws " + str(n))
             self.hand.add(n)
             return "go"
 
@@ -155,7 +160,7 @@ class Monster(Player):
             return "stop"
 
         self.hand.add(c)
-        print("monster keeps", c)
+        print("monster keeps " + str(c))
         return "go"
 
 class Game:
@@ -172,7 +177,7 @@ class Game:
 
         print("\nstart")
         self.p.hand.show("Player")
-        self.m.hand.show("Monster")
+        print("Monster: hidden")
 
         print("\nplayer turn")
         self.p.turn(self.deck)
