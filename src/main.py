@@ -210,12 +210,12 @@ class Game:
         self.player.hand.add_card(self.deck.draw())
         self.monster.hand.add_card(self.deck.draw())
 
-        print("\n--- Starting Hands ---")
+        print("\n... Starting Hands ...")
         self.player.hand.show("Player")
         self.monster.hand.show("Monster")
 
         # Player turn
-        print("\n--- Player Turn ---")
+        print("\n..... Player Turn .....")
         self.player.take_turn(self.deck)
 
         if self.player.hand.get_value() > 21:
@@ -233,7 +233,7 @@ class Game:
         player_score = self.player.hand.get_value()
         monster_score = self.monster.hand.get_value()
 
-        print("\n--- Final Result ---")
+        print("\n      Final Result  ")
         self.player.hand.show("Player")
         self.monster.hand.show("Monster")
 
