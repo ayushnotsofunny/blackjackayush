@@ -27,7 +27,10 @@ DARK_GREY = (90, 90, 90)
 WHITE = (248, 248, 248)
 
 #This is a cultural disclaimer so no one would get offended for the storyline of the game in future
-DISCLAIMER_TITLE=""
+DISCLAIMER_TITLE="Cultural Disclaimer"
+DISCLAIMER_PARAGRAPHS=[
+    
+]
 
 # import random
 # # test 1
