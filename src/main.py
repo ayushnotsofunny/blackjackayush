@@ -365,7 +365,7 @@ class Game:
             self.message=f"Kumari drew{card} and the total went too far."
             self.end_round("malla")
         else:
-            self.message=f'Kumari drew {card}. The kingdom still holds. Hit '
+            self.message=f"Kumari drew {card}. The kingdom still holds. Hit or Stand"
 
 if __name__=="__main__":
     Game().run()
