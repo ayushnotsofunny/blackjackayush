@@ -507,6 +507,63 @@ class Game:
 
         help_text = "Heart twist: if Kumari draws a Heart, you may Keep or Discard it. Ace is always 1."
         self.draw_text(help_text, self.tiny_font, BLACK, 56, HEIGHT - 26)
+
+    def handle_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+
+
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                self.running = False
+
+
+            elif self.show_intro:
+                if self.start_btn.clicked(event):
+                    self.show_intro = False
+
+
+            elif self.state == "player_turn":
+                if self.hit_btn.clicked(event):
+                    self.handle_player_hit()
+                elif self.stand_btn.clicked(event):
+                    self.handle_player_stand()
+
+
+            elif self.state == "heart_choice":
+                if self.keep_btn.clicked(event):
+                    self.handle_heart_keep()
+                elif self.discard_btn.clicked(event):
+                    self.handle_heart_discard()
+
+
+            elif self.state == "round_over":
+                if self.restart_btn.clicked(event):
+                    self.reset_round()
+
+
+    def run(self):
+        while self.running:
+            self.clock.tick(FPS)
+            self.handle_events()
+
+
+            if not self.show_intro and self.state == "monster_turn":
+                self.run_monster_ai()
+
+
+            if self.show_intro:
+                self.draw_intro_screen()
+            else:
+                self.draw_ui()
+
+
+            pygame.display.flip()
+
+
+        pygame.quit()
+        sys.exit()
+
                 
 
 if __name__=="__main__":
