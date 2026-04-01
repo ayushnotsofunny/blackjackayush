@@ -65,7 +65,17 @@ HISTORY_PARAGRAPHS = [
     ),
 ]
 
+class Button:
+    def __init__(self, rect, text, font, bg=LIGHT_GREY, fg=BLACK):
+        self.rect=pygame.Rect(rect)
+        self.text=text
+        self.font=font
+        self.bg=bg
+        self.fg=fg
 
+    def draw(self, screen, mouse_pos):
+        hover=self.rect.collidepoint(mouse_pos)
+        color=tuple(max(0,c-15) for c in self.bg) if hover else self.bg
 
 # import random
 # # test 1
