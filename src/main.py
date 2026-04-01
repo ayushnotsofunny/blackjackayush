@@ -399,6 +399,21 @@ class Game:
             self.state="player_turn"
             self.message=f"Kumari discarded {old} and received {new_card}. Hit or Stand."
 
+    def run_monster_ai(self):
+        now=pygame.time.get_ticks()
+        if now<self.monster-timer:
+            return
+        total=self.monster.hand.value()
+        player_score=self.player.hand.value()   
+
+        if total>21:
+            self.message="The Malla King overreached and fell"
+            self.end_round("kumari")
+            return
+        
+        if total>=17 and total>=player_score:
+            self.message="The Malla King stands and waits for judgement"
+
 if __name__=="__main__":
     Game().run()
 
