@@ -1,3 +1,17 @@
+import os
+import sys
+import random
+import textwrap
+import pygame
+
+GAME_PATH=os.path.dirname(os.path.abspath(__file__))
+
+def get_asset_path(filename: str) -> str:
+    return os.path.join(GAME_PATH, "assets",filename)
+
+
+
+
 # import random
 # # test 1
 # # test 2
