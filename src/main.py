@@ -232,6 +232,7 @@ class Game:
         pygame.draw.rect(self.screem,BLACK,panel,width=4,border_radius=24)
         self.draw_text(TITLE,self.title_font,RED,WIDTH//2,54,center=True)
         left_x=78
+        llllllllllll
 
 
 # import random
