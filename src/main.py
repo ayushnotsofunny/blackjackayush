@@ -246,23 +246,23 @@ class Game:
             )
             y+=14
 
-            history_box=pygame.Rect(68,540,WIDTH-136,150)
-            pygame.draw.rect(self.screen,LIGHT_GREY,history_box,border_radius=18)
-            pygame.draw.rect(self.screen,RED,history_box,width=3,border_radius=18)
-            self.draw_text("A Short Story Before the Game",self.section_font,RED,90,558)
+        history_box=pygame.Rect(68,540,WIDTH-136,150)
+        pygame.draw.rect(self.screen,LIGHT_GREY,history_box,border_radius=18)
+        pygame.draw.rect(self.screen,RED,history_box,width=3,border_radius=18)
+        self.draw_text("A Short Story Before the Game",self.section_font,RED,90,558)
 
-            story_y=596
-            for paragrapgh in HISTORY_PARAGRAPHS:
-                story_y=self.draw_paragrapgh(
-                    paragrapgh,
-                    self,self.intro_small_font,
-                    BLACK,
-                    pygame.Rect(92,story_y,WIDTH-184,70),
-                    line_gap=3
-                )
-                story_y+=8
+        story_y=596
+        for paragrapgh in HISTORY_PARAGRAPHS:
+            story_y=self.draw_paragrapgh(
+                paragrapgh,
+                self,self.intro_small_font,
+                BLACK,
+                pygame.Rect(92,story_y,WIDTH-184,70),
+                line_gap=3
+            )
+            story_y+=8
 
-            self.start_btn.draw(self.screen,pygame.mouse.get_pos())
+        self.start_btn.draw(self.screen,pygame.mouse.get_pos())
 
     def draw_table(self):
         self.screen.fill(GREY)
