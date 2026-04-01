@@ -19,6 +19,7 @@ CARD_W, CARD_H=100, 140
 CARD_GAP=112
 
 #Color Red Black & Grey: Newari Traditional Colors
+RED=(160,35,35)
 
 # import random
 # # test 1
