@@ -235,11 +235,17 @@ class Game:
         right_margin=WIDTH-78
         content_w=right_margin-left_x
         self.draw_text(DISCLAIMER_TITLE,self.section_font,BLACK,left_x,108)
-        left_x=78
-        right_margin=WIDTH-78
-        content_w=right_margin-left_x
-        self.draw_text(Fi)
-
+        y=152
+        for paragraph in DISCLAIMER_PARAGRAPHS:
+            y=self.draw_paragrapgh(
+                paragraph,
+                self.intro_body_font,
+                BLACK,
+                pygame.Rect(left_x,y,content_w-10,120),
+                line_gap=4,
+            )
+            y+=14
+            
 
 # import random
 # # test 1
