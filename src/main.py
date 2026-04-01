@@ -237,7 +237,7 @@ class Game:
         self.draw_text(DISCLAIMER_TITLE,self.section_font,BLACK,left_x,108)
         y=152
         for paragraph in DISCLAIMER_PARAGRAPHS:
-            y=self.draw_paragrapgh(
+            y=self.draw_paragraph(
                 paragraph,
                 self.intro_body_font,
                 BLACK,
@@ -253,7 +253,7 @@ class Game:
 
         story_y=596
         for paragrapgh in HISTORY_PARAGRAPHS:
-            story_y=self.draw_paragrapgh(
+            story_y=self.draw_paragraph(
                 paragrapgh,
                 self.intro_small_font,
                 BLACK,
