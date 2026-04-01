@@ -393,7 +393,7 @@ class Game:
         self.player.hand.add(new_card)
 
         if self.player.hand.value()>21:
-            self.message=f"Kumari discarder {old} and received {new_card}. It was too much."
+            self.message=f"Kumari discarded {old} and received {new_card}. It was too much."
             self.end_round("malla")
         else:
             self.state="player_turn"
