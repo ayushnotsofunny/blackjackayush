@@ -288,6 +288,12 @@ class Game:
         self.draw_text(symbol,self.symbol_font,color,x+CARD_W//2,y+CARD_H//2,center=True)
         self.draw_text(card.rank, self.font, color, x + CARD_W - 28, y + CARD_H - 34)
         self.draw_text(symbol, self.small_font, color, x + CARD_W - 24, y + CARD_H - 56)
+    
+    def draw_hand(self,hand,x,y,hide_first=False):
+        for index,card in enumerate(hand.cards):
+            card_x=x+index*CARD_GAP
+            self.draw_card(card,card_x,y,hidden=(hide_first and index==0))
+            
 
 
 
