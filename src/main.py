@@ -208,7 +208,7 @@ class Game:
         current=""
 
         for word in words:
-            test=word if not current else f"{current}{word}"
+            test = word if not current else f"{current}{word}"
             if font.size(test)[0]<=rect.width:
                 current=test
             else:
