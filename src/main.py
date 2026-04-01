@@ -251,6 +251,12 @@ class Game:
             pygame.draw.rect(self.screen,RED,history_box,width=3,border_radius=18)
             self.draw_text("A Short Story Before the Game")
 
+
+
+
+if __name__=="__main__":
+    Game().run()
+
 # import random
 # # test 1
 # # test 2
