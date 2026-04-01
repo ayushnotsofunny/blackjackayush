@@ -235,7 +235,9 @@ class Game:
         right_margin=WIDTH-78
         content_w=right_margin-left_x
         self.draw_text(DISCLAIMER_TITLE,self.section_font,BLACK,left_x,108)
-        
+        left_x=78
+        right_margin=WIDTH-78
+        content_w=right_margin
 
 
 # import random
