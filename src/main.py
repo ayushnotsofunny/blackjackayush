@@ -420,12 +420,23 @@ class Game:
 
         if card.suit=="Hearts":
             next_total=total+card.value
-            if next_total<=21:
+            if next_total <= 21:
                 self.monster.hand.add(card)
-                self.message=f"The Malla King rejected a Heart and dew {replacement} instead"
+                self.message = f"The Malla King drew {card} and kept it."
             else:
-                self.monster.hand.add(card)
-                self.message=f"The malla king drew {card}."
+                replacement = self.deck.draw()
+                self.monster.hand.add(replacement)
+                self.message = f"The Malla King rejected a Heart and drew {replacement} instead."
+        else:
+            self.monster.hand.add(card)
+            self.message = f"The Malla King drew {card}."
+
+
+        if self.monster.hand.value() > 21:
+            self.message = "The Malla King's pride pushed him too far."
+            self.end_round("kumari")
+        else:
+            self.monster_timer = now + 1100
 
                 
 
