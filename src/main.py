@@ -401,7 +401,7 @@ class Game:
 
     def run_monster_ai(self):
         now=pygame.time.get_ticks()
-        if now<self.monster-timer:
+        if now<self.monster_timer:
             return
         total=self.monster.hand.value()
         player_score=self.player.hand.value()   
