@@ -9,6 +9,11 @@ GAME_PATH=os.path.dirname(os.path.abspath(__file__))
 def get_asset_path(filename: str) -> str:
     return os.path.join(GAME_PATH, "assets",filename)
 
+#This is the Window Setup Dimensions and Game Name 
+WIDTH, HEIGHT=1280,820
+FPS=60
+TITLE="Kumari Vs Malla King"
+
 
 
 
