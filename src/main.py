@@ -362,7 +362,7 @@ class Game:
         self.player.hand.add(card)
 
         if self.player.hand.value()>21:
-            self.message=f"Kumari drew{card} and the total went too far."
+            self.message=f"Kumari drew {card} and the total went too far."
             self.end_round("malla")
         else:
             self.message=f"Kumari drew {card}. The kingdom still holds. Hit or Stand"
