@@ -112,7 +112,7 @@ class Deck:
     def __init__(self):
         self.cards=[]
         suits=["Hearts","Diamonds","Clubs","Spades"]
-        Ranks={
+        ranks={
             "A": 1,
             "2": 2,
             "3": 3,
@@ -133,7 +133,76 @@ class Deck:
 
         random.shuffle(self.cards)
 
-        
+    def draw(self):
+        #This is to make new deck if the old one runs out. So that the game never ends
+        if not self.cards:
+            self.__init__()
+        return self.cards.pop()
+    
+class Hand:
+    def __init__(self):
+        self.cards=[]
+
+    def add(self,card):
+        self.cards.append(card)
+
+    def value(self):
+        return sum(card.value for card in self.cards)
+    
+class Player:
+    def __init__(self,name):
+        self.name=name
+        self.hand=Hand()
+
+class MallaKing(Player):
+    def __init__(self):
+        super().__init__("Malla King")
+
+class Game:
+    def __init__(self):
+        pygame.init()
+        pygame.display.set_caption(TITLE)
+        self.screen=pygame.display.set_mode((Width,HEIGHT))
+        self.clock=pygame.time.Clock()
+        self.title_font=pygame.font.SysFont("dejavusans",34,bold=True)
+        self.section_font=pygame.font.SysFont("dejavusans",28,bold=True)
+        self.font=pygame.font.SysFont("dejavusans", 22, bold=True)
+        self.small_font = pygame.font.SysFont("dejavusans", 18)
+        self.tiny_font = pygame.font.SysFont("dejavusans", 15)
+        self.symbol_font = pygame.font.SysFont("dejavusans", 40, bold=True)
+        self.intro_body_font = pygame.font.SysFont("dejavusans", 17)
+        self.intro_small_font = pygame.font.SysFont("dejavusans", 16)
+        self.hit_btn = Button((70, 700, 120, 50), "Hit", self.font, bg=LIGHT_GREY)
+        self.stand_btn = Button((205, 700, 130, 50), "Stand", self.font, bg=GREY)
+        self.restart_btn = Button((1020, 40, 190, 50), "Play Again", self.font, bg=RED, fg=WHITE)
+        self.start_btn = Button((465, 728, 350, 54), "Enter the Kingdom", self.font, bg=RED, fg=WHITE)
+        self.keep_btn = Button((910, 484, 125, 48), "Keep", self.font, bg=RED, fg=WHITE)
+        self.discard_btn = Button((1050, 484, 145, 48), "Discard", self.font, bg=GREY)
+        self.running = True
+        self.show_intro = True
+        self.reset_round()
+
+    def reset_round(self):
+        self.deck=Deck()
+        self.player=Player("Kumari")
+        self.monster=MallaKing()
+        self.player.hand=Hand()
+        self.monster.hand=Hand()
+        self.player.hand.add(self.deck.draw())
+        self.monster.hand.add(self.deck.draw())
+        self.state="player_turn"
+        self.pending_heart=None
+        self.message="Kumari's turn. Choose wisely: Hit or Stand"
+        self.result_text=""
+        self.result_subtext=""
+        self.monster_timer=0
+
+    def draw_text(self,text,font,color,x,y,center=False):
+        surf=font.render(text,True,color)
+        rect=surf.get_rect(center=(x,y)) if center else surf.get_rect(topleft=(x,y))
+        self.screen.blit(surf, rect)
+
+
 
 # import random
 # # test 1
