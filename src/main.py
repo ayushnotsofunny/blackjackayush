@@ -202,7 +202,7 @@ class Game:
         rect=surf.get_rect(center=(x,y)) if center else surf.get_rect(topleft=(x,y))
         self.screen.blit(surf, rect)
 
-    def draw_paragrapgh(self,text,font,color,rect,line_gap=6):
+    def draw_paragraph(self,text,font,color,rect,line_gap=6):
         words=text.split()
         lines=[]
         current=""
