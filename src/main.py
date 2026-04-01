@@ -14,8 +14,11 @@ WIDTH, HEIGHT=1280,820
 FPS=60
 TITLE="Kumari Vs Malla King"
 
+#This is the Card Layot
+CARD_W, CARD_H=100, 140
+CARD_GAP=112
 
-
+#COLOR 
 
 # import random
 # # test 1
