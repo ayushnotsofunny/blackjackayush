@@ -127,6 +127,13 @@ class Deck:
             "Q": 10,
             "K": 10,
         }
+        for suit in suits:
+            for rank, value in ranks.items():
+                self.cards.append(Card(suit,rank,value))
+
+        random.shuffle(self.cards)
+
+        
 
 # import random
 # # test 1
