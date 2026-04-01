@@ -162,7 +162,7 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption(TITLE)
-        self.screen=pygame.display.set_mode((Width,HEIGHT))
+        self.screen=pygame.display.set_mode((WIDTH,HEIGHT))
         self.clock=pygame.time.Clock()
         self.title_font=pygame.font.SysFont("dejavusans",34,bold=True)
         self.section_font=pygame.font.SysFont("dejavusans",28,bold=True)
@@ -250,6 +250,7 @@ class Game:
             pygame.draw.rect(self.screen,LIGHT_GREY,history_box,border_radius=18)
             pygame.draw.rect(self.screen,RED,history_box,width=3,border_radius=18)
             self.draw_text("A Short Story Before the Game")
+            
 
 
 
