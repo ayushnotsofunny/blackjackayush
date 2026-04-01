@@ -18,7 +18,7 @@ TITLE="Kumari Vs Malla King"
 CARD_W, CARD_H=100, 140
 CARD_GAP=112
 
-#COLOR 
+#Color Red Black & Grey: Newari Traditional Colors
 
 # import random
 # # test 1
