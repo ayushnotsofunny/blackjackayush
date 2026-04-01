@@ -412,7 +412,17 @@ class Game:
             return
         
         if total>=17 and total>=player_score:
-            self.message="The Malla King stands and waits for judgement"
+            self.message="The Malla King stands and waits for judgement."
+            self.finish_winner()
+            return
+        
+        card=self.deck.draw()
+
+        if card.suit=="Hearts":
+            next_total=total+card.value
+            if next_total<=21:
+                self.monster.hand.add(card)
+                self.message=f"The Malla King rejected a Heart and dew {replacement}"
 
 if __name__=="__main__":
     Game().run()
