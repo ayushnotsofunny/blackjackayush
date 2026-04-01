@@ -468,7 +468,45 @@ class Game:
         else:
             self.result_text = "Sacred Draw"
             self.result_subtext = "Neither side claimed the valley today."
+    def draw_ui(self):
+        self.draw_table()
+        self.draw_text(TITLE, self.title_font, RED, 56, 46)
+        self.draw_text(
+            "A respectful fictional card duel inspired by Newar culture",
+            self.tiny_font,
+            BLACK,
+            58,
+            84,
+        )
 
+
+        self.draw_hand_row(
+            "Malla King",
+            self.monster_total_for_display(),
+            self.monster.hand,
+            60,
+            132,
+            hide_first=(self.state in ("player_turn", "heart_choice")),
+        )
+        self.draw_hand_row("Kumari", self.player_total_for_display(), self.player.hand, 60, 430)
+
+
+        self.draw_message_box()
+
+
+        mouse_pos = pygame.mouse.get_pos()
+        if self.state == "player_turn":
+            self.hit_btn.draw(self.screen, mouse_pos)
+            self.stand_btn.draw(self.screen, mouse_pos)
+        elif self.state == "heart_choice":
+            self.draw_heart_panel()
+        elif self.state == "round_over":
+            self.restart_btn.draw(self.screen, mouse_pos)
+            self.draw_result_panel()
+
+
+        help_text = "Heart twist: if Kumari draws a Heart, you may Keep or Discard it. Ace is always 1."
+        self.draw_text(help_text, self.tiny_font, BLACK, 56, HEIGHT - 26)
                 
 
 if __name__=="__main__":
