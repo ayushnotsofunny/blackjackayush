@@ -422,7 +422,12 @@ class Game:
             next_total=total+card.value
             if next_total<=21:
                 self.monster.hand.add(card)
-                self.message=f"The Malla King rejected a Heart and dew {replacement}"
+                self.message=f"The Malla King rejected a Heart and dew {replacement} instead"
+            else:
+                self.monster.hand.add(card)
+                self.message=f"The malla king drew {card}."
+
+                
 
 if __name__=="__main__":
     Game().run()
