@@ -293,8 +293,63 @@ class Game:
         for index,card in enumerate(hand.cards):
             card_x=x+index*CARD_GAP
             self.draw_card(card,card_x,y,hidden=(hide_first and index==0))
-            
 
+    def draw_hand_row(self,label,total_text,hand,x,y,hide_first=False):
+        self.draw_text(label,self.section_font,BLACK,x,y)
+        self.draw_text(f"Total: {total_text}",self.font,RED,x+2,y+36)
+        self.draw_hand(hand,x,y+68,hide_first=hide_first)
+
+    def draw_message_box(self):
+        msg_box=pygame.Rect(365,692,850,74)
+        pygame.draw.rect(self.screen,WHITE,msg_box,width=2,border_radius=14)
+        pygame.draw.rect(self.screen,BLACK,msg_box,width=2,border_radius=14)
+        self.draw_paragrapgh(self.message,self.small_font,BLACK,pygame.Rect(385,710,810,50),line_gap=2)
+
+    def draw_heart_panel(self):
+        panel=pygame.Rect(865,315,350,255)
+        pygame.draw.rect(self.screen,WHITE,panel,width=3,border_radius=16)
+        pygame.draw.rect(self.screen,RED,panel,width=3,border_radius=16)
+        self.draw_text("Heart Card Choice",self.font,RED,1040,340,center=True)
+        self.draw_paragrapgh(
+            "Kumari may keep this blessing or discard it",
+            self.small_font,
+            BLACK,
+            pygame.Rect(888,368,300,45),
+            line_gap=2,
+        )
+
+        if self.pending_heart:
+            self.draw_card(self.pending_heart, 886, 412)
+            self.draw_text(str(self.pending_heart), self.small_font, BLACK, 1005, 430)
+            self.draw_text("Choose one option below.", self.small_font, BLACK, 1005, 456)
+
+
+        mouse_pos = pygame.mouse.get_pos()
+        self.keep_btn.draw(self.screen, mouse_pos)
+        self.discard_btn.draw(self.screen, mouse_pos)
+
+    def draw_result_panel(self):
+        panel=pygame.Rect(850,430,365,185)
+        pygame.draw.rect(self.screen,WHITE,panel,border_radius=18)
+        pygame.draw.rect(self.screen,RED,panel,border_radius=18)
+        self.draw_text(self.result_text,self.title_font,RED,1032,480,center=True)
+        self.draw_paragrapgh(
+            self.result_subtext,
+            self.small_font,
+            BLACK,
+            pygame.Rect(890,515,285,60),
+            line_gap=3,
+        )
+
+    def player_total_for_display(self):
+        return self.player.hand.value()
+    
+    def monster_total_for_display(self):
+        if self.state in ("player_turn","heart_choice"):
+            return "?"
+        return str(self.monster.hand.value())
+    
+    def handle_
 
 
 if __name__=="__main__":
