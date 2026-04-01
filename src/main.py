@@ -286,7 +286,9 @@ class Game:
         symbol=card.suit_symbol()
         self.draw_text(card.rank,self.font,color,x+10,y+8)
         self.draw_text(symbol,self.symbol_font,color,x+CARD_W//2,y+CARD_H//2,center=True)
-        
+        self.draw_text(card.rank, self.font, color, x + CARD_W - 28, y + CARD_H - 34)
+        self.draw_text(symbol, self.small_font, color, x + CARD_W - 24, y + CARD_H - 56)
+
 
 
 if __name__=="__main__":
