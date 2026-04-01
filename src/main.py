@@ -349,8 +349,22 @@ class Game:
             return "?"
         return str(self.monster.hand.value())
     
-    def handle_
+    def handle_player_hit(self):
+        card=self.deck.draw()
 
+        #it is about the special twist
+        if card.suit=="Hearts":
+            self.pending_heart=card
+            self.state="heart_choice"
+            self.message=f"Kumari drew {card}. Keep it, or discard it and trust destiny?"
+            return
+        
+        self.player.hand.add(card)
+
+        if self.player.hand.value()>21:
+            self.message=f"Kumari drew{card} and the total went too far."
+            self.end_round("malla")
+        else
 
 if __name__=="__main__":
     Game().run()
