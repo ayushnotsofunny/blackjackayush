@@ -20,6 +20,13 @@ CARD_GAP=112
 
 #Color Red Black & Grey: Newari Traditional Colors
 RED=(160,35,35)
+BLACK = (20, 20, 20)
+GREY = (155, 155, 155)
+LIGHT_GREY = (235, 235, 235)
+DARK_GREY = (90, 90, 90)
+WHITE = (248, 248, 248)
+
+#
 
 # import random
 # # test 1
