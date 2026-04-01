@@ -255,7 +255,7 @@ class Game:
         for paragrapgh in HISTORY_PARAGRAPHS:
             story_y=self.draw_paragrapgh(
                 paragrapgh,
-                self,self.intro_small_font,
+                self.intro_small_font,
                 BLACK,
                 pygame.Rect(92,story_y,WIDTH-184,70),
                 line_gap=3
