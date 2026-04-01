@@ -50,6 +50,23 @@ DISCLAIMER_PARAGRAPHS=[
 
 ]
 
+HISTORY_PARAGRAPHS = [
+    (
+        "Legend says the Kumari is the living goddess, a symbol of grace, power, "
+        "and divine protection in Newar culture."
+    ),
+    (
+        "Taleju Bhawani is revered as a powerful goddess connected to the old "
+        "Malla courts and the sacred stories of the valley."
+    ),
+    (
+        "In this game, Kumari faces the Malla King in a symbolic card duel. It is "
+        "a fictional retelling made with respect, not a literal history lesson."
+    ),
+]
+
+
+
 # import random
 # # test 1
 # # test 2
