@@ -202,6 +202,21 @@ class Game:
         rect=surf.get_rect(center=(x,y)) if center else surf.get_rect(topleft=(x,y))
         self.screen.blit(surf, rect)
 
+    def draw_paragrapgh(self,text,font,color,rect,line_gap=6):
+        words=text.split()
+        lines=[]
+        current=""
+
+        for word in words:
+            test=word if not current else f"{current}{word}"
+            if font.size(test)[0]<=rect.width:
+                current=test
+            else:
+                lines.append(current)
+                current=word
+        
+        if current:
+            lines.append(current)
 
 
 # import random
