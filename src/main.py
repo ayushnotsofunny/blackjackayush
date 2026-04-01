@@ -29,7 +29,25 @@ WHITE = (248, 248, 248)
 #This is a cultural disclaimer so no one would get offended for the storyline of the game in future
 DISCLAIMER_TITLE="Cultural Disclaimer"
 DISCLAIMER_PARAGRAPHS=[
-    
+        (
+        "This game is inspired by the rich traditions and legends of Nepal, "
+        "including the sacred relationship between the Living Goddess Kumari and "
+        "the goddess Taleju Bhawani. It draws loosely from stories associated with "
+        "the Malla kings and the origins of the Kumari tradition."
+    ),
+    (
+        "The storyline, characters, and outcomes in this game are fictional and "
+        "reimagined for creative and entertainment purposes. They are not intended "
+        "to represent or alter the authentic religious beliefs, historical accounts, "
+        "or cultural practices connected to the Kumari or Taleju Bhawani."
+    ),
+    (
+        "We deeply respect the cultural and spiritual significance of the Kumari "
+        "tradition in Nepal and encourage players to learn about its true history "
+        "and meaning beyond this game."
+    ),
+    "Player discretion and cultural sensitivity are appreciated.",
+
 ]
 
 # import random
