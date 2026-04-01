@@ -310,7 +310,7 @@ class Game:
         pygame.draw.rect(self.screen,WHITE,panel,width=3,border_radius=16)
         pygame.draw.rect(self.screen,RED,panel,width=3,border_radius=16)
         self.draw_text("Heart Card Choice",self.font,RED,1040,340,center=True)
-        self.draw_paragrapgh(
+        self.draw_paragraph(
             "Kumari may keep this blessing or discard it",
             self.small_font,
             BLACK,
