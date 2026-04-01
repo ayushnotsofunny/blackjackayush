@@ -367,6 +367,11 @@ class Game:
         else:
             self.message=f"Kumari drew {card}. The kingdom still holds. Hit or Stand"
 
+    def handle_player_stand(self):
+        self.state="monster_turn"
+        self.message="The Malla King now makes his move..."
+        self.monster_timer=pygame.time.get_ticks
+
 if __name__=="__main__":
     Game().run()
 
