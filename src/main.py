@@ -277,7 +277,16 @@ class Game:
         rect = pygame.Rect(x, y, CARD_W, CARD_H)
         pygame.draw.rect(self.screen, WHITE if not hidden else DARK_GREY, rect, border_radius=14)
         pygame.draw.rect(self.screen, BLACK, rect, width=3, border_radius=14)
-    
+
+        if hidden:
+            self.draw_text("?",self.title_font,WHITE,x+CARD_W//2,y+CARD_H//2,center=True)
+            return
+        
+        color=card.color()
+        symbol=card.suit_symbol()
+        self.draw_text(card.rank,self.font,color,x+10,y+8)
+        self.draw_text(symbol,self.symbol_font,color,x+CARD_W//2,y+CARD_H//2,center=True)
+        
 
 
 if __name__=="__main__":
