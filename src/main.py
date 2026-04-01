@@ -76,6 +76,57 @@ class Button:
     def draw(self, screen, mouse_pos):
         hover=self.rect.collidepoint(mouse_pos)
         color=tuple(max(0,c-15) for c in self.bg) if hover else self.bg
+        pygame.draw.rect(screen, color, self.rect, border_radius=12)
+        pygame.draw.rect(screen,BLACK,self.rect, width=2,border_radius=12)
+        label=self.font.render(self.text, True,self.fg)
+        screen.blit(label,label.get_rect(center=self.rect.center))
+
+    def clicked(self,event):
+        return (
+            event.type==pygame.MOUSEBUTTONDOWN
+            and event.button==1
+            and self.rect.collidepoint(event.pos)
+        )
+    
+class Card:
+    def __init__(self,suit,rank,value):
+        self.suit=suit
+        self.rank=rank
+        self.value=value
+
+    def __str(self):
+        return f"{self.rank} of {self.suit}"
+    
+    def color(self):
+        return RED if self.suit in ("Hearts","Diamonds") else BLACK
+    
+    def suit_symbol(self):
+         return {
+            "Hearts": "♥",
+            "Diamonds": "♦",
+            "Clubs": "♣",
+            "Spades": "♠",
+        }[self.suit]
+    
+class Deck:
+    def __init__(self):
+        self.cards=[]
+        suits=["Hearts","Diamonds","Clubs","Spades"]
+        Ranks={
+            "A": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 5,
+            "6": 6,
+            "7": 7,
+            "8": 8,
+            "9": 9,
+            "10": 10,
+            "J": 10,
+            "Q": 10,
+            "K": 10,
+        }
 
 # import random
 # # test 1
