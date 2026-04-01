@@ -264,11 +264,11 @@ class Game:
 
             self.start_btn.draw(self.screen,pygame.mouse.get_pos())
 
-        def draw_table(self):
-            self.screen.fill(GREY)
-            outer=pygame.Rect(18,18,WIDTH-36,HEIGHT-36)
-            inner=pygame.Rect(28,28,WIDTH-56,HEIGHT-56)
-            pygame.draw.rect(self.screen, BLACK, outer, border_radius=22)
+    def draw_table(self):
+        self.screen.fill(GREY)
+        outer=pygame.Rect(18,18,WIDTH-36,HEIGHT-36)
+        inner=pygame.Rect(28,28,WIDTH-56,HEIGHT-56)
+        pygame.draw.rect(self.screen, BLACK, outer, border_radius=22)
         pygame.draw.rect(self.screen, LIGHT_GREY, inner, border_radius=20)
         pygame.draw.rect(self.screen, RED, inner, width=4, border_radius=20)
 
@@ -277,7 +277,7 @@ class Game:
         rect = pygame.Rect(x, y, CARD_W, CARD_H)
         pygame.draw.rect(self.screen, WHITE if not hidden else DARK_GREY, rect, border_radius=14)
         pygame.draw.rect(self.screen, BLACK, rect, width=3, border_radius=14)
-
+    
 
 
 if __name__=="__main__":
