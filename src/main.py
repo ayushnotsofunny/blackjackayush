@@ -218,6 +218,17 @@ class Game:
         if current:
             lines.append(current)
 
+        y=rect.y
+        for line in lines:
+            surf=font.render(line,True,color)
+            self.screen.blit(srf,(rect.x,y))
+            y+=surf.get_height()+line_gap
+        return y
+    
+    def draw_intro_screen(self):
+        self.screen.fill(GREY)
+        panel
+
 
 # import random
 # # test 1
