@@ -377,12 +377,27 @@ class Game:
         self.player.hand.add(kept)
         self.pending_heart=None
 
+        if self.player.hand.value()>21:
+            self.message=f"Kumari kept {kept}, but the blessing turned heavy"
+            self.end_round("malla")
+        else:
+            self.state="player_turn"
+            self.message=f"Kumari kept {kept}. The path is still open. Hit or Stand"
 
 
+
+    def handle_heart_discard(self):
         old=self.pending_heart
         self.pending_heart=None
         new_card=self.deck.draw()
-        self.player.hand
+        self.player.hand.add(new_card)
+
+        if self.player.hand.value()>21:
+            self.message=f"Kumari discarder {old} and received {new_card}. It was too much."
+            self.end_round("malla")
+        else:
+            self.state="player_turn"
+            self.message=f"Kumari discarded {old} and received {new_card}. Hit or Stand."
 
 if __name__=="__main__":
     Game().run()
