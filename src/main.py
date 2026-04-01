@@ -227,7 +227,11 @@ class Game:
     
     def draw_intro_screen(self):
         self.screen.fill(GREY)
-        panel
+        panel=pygame.Rect(36,24,WIDTH-72,HEIGHT-48)
+        pygame.draw.rect(self.screem,WHITE,panel,border_radius=24)
+        pygame.draw.rect(self.screem,BLACK,panel,width=4,border_radius=24)
+        self.draw_text(TITLE,self.title_font,RED,WIDTH//2,54,center=True)
+        left_x=78
 
 
 # import random
