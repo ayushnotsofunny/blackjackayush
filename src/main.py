@@ -370,7 +370,19 @@ class Game:
     def handle_player_stand(self):
         self.state="monster_turn"
         self.message="The Malla King now makes his move..."
-        self.monster_timer=pygame.time.get_ticks
+        self.monster_timer=pygame.time.get_ticks()+900
+
+    def handle_heart_keep(self):
+        kept=self.pending_heart
+        self.player.hand.add(kept)
+        self.pending_heart=None
+
+
+
+        old=self.pending_heart
+        self.pending_heart=None
+        new_card=self.deck.draw()
+        self.player.hand
 
 if __name__=="__main__":
     Game().run()
