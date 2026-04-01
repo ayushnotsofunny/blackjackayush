@@ -232,7 +232,10 @@ class Game:
         pygame.draw.rect(self.screem,BLACK,panel,width=4,border_radius=24)
         self.draw_text(TITLE,self.title_font,RED,WIDTH//2,54,center=True)
         left_x=78
-        llllllllllll
+        right_margin=WIDTH-78
+        content_w=right_margin-left_x
+        self.draw_text(DISCLAIMER_TITLE,self.section_font,BLACK,left_x,108)
+        
 
 
 # import random
