@@ -438,6 +438,37 @@ class Game:
         else:
             self.monster_timer = now + 1100
 
+    def finish_winner(self):
+        p_total = self.player.hand.value()
+        m_total = self.monster.hand.value()
+
+
+        if p_total > 21:
+            self.end_round("malla")
+        elif m_total > 21:
+            self.end_round("kumari")
+        elif p_total > m_total:
+            self.end_round("kumari")
+        elif m_total > p_total:
+            self.end_round("malla")
+        else:
+            self.end_round("tie")
+
+
+    def end_round(self, winner):
+        self.state = "round_over"
+
+
+        if winner == "kumari":
+            self.result_text = "Kumari won"
+            self.result_subtext = "Peaceful Kumari Kingdom has been Established"
+        elif winner == "malla":
+            self.result_text = "Kumari Lost"
+            self.result_subtext = "She will reborn as Tuleju Bhawani."
+        else:
+            self.result_text = "Sacred Draw"
+            self.result_subtext = "Neither side claimed the valley today."
+
                 
 
 if __name__=="__main__":
