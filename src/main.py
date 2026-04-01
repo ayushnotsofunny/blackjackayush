@@ -221,7 +221,7 @@ class Game:
         y=rect.y
         for line in lines:
             surf=font.render(line,True,color)
-            self.screen.blit(srf,(rect.x,y))
+            self.screen.blit(surf,(rect.x,y))
             y+=surf.get_height()+line_gap
         return y
     
