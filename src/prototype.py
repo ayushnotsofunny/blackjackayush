@@ -2,8 +2,6 @@
 
 #This is the program i made at the first. just the figure out the mathematical structure of program
 
-
-
 import random
 import time
 
