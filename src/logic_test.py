@@ -1,6 +1,4 @@
-import random
-# test 1
-# test 2
+#This is the program i made at the first.import random
 import time
 
 class Card:
