@@ -333,7 +333,7 @@ class Game:
         pygame.draw.rect(self.screen,WHITE,panel,border_radius=18)
         pygame.draw.rect(self.screen,RED,panel,border_radius=18)
         self.draw_text(self.result_text,self.title_font,RED,1032,480,center=True)
-        self.draw_paragrapgh(
+        self.draw_paragraph(
             self.result_subtext,
             self.small_font,
             BLACK,
