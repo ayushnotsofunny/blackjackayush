@@ -42,7 +42,7 @@ DISCLAIMER_PARAGRAPHS=[
         "or cultural practices connected to the Kumari or Taleju Bhawani."
     ),
     (
-        "We deeply respect the cultural and spiritual significance of the Kumari "
+        "We deeply respect the cultural significance of the Kumari "
         "tradition in Nepal and encourage players to learn about its true history "
         "and meaning beyond this game."
     ),
