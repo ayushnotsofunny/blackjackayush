@@ -470,7 +470,7 @@ class Game:
             self.result_subtext = "Neither side claimed the valley today."
     def draw_ui(self):
         self.draw_table()
-        self.draw_text(TITLE, self.title_font, RED, WIDTH//2, 30, center=True)
+        self.draw_text(TITLE, self.title_font, RED, WIDTH//2, 50, center=True)
         self.draw_text(
             "A respectful fictional card duel inspired by Newar culture",
             self.tiny_font,
