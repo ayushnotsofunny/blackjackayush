@@ -488,8 +488,7 @@ class Game:
             110,
             hide_first=(self.state in ("player_turn", "heart_choice")),
         )
-        self.draw_hand_row("Kumari", self.player_total_for_display(), self.player.hand, 60, 430)
-
+        self.draw_hand_row("Kumari", self.player_total_for_display(), self.player.hand, 120, 320)
 
         self.draw_message_box()
 
