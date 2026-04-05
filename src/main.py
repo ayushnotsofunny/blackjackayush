@@ -300,7 +300,7 @@ class Game:
         self.draw_hand(hand,x,y+68,hide_first=hide_first)
 
     def draw_message_box(self):
-        msg_box=pygame.Rect(365,692,850,74)
+        msg_box=pygame.Rect(220,560,550,50)
         pygame.draw.rect(self.screen,WHITE,msg_box,width=2,border_radius=14)
         pygame.draw.rect(self.screen,BLACK,msg_box,width=2,border_radius=14)
         self.draw_paragraph(self.message,self.small_font,BLACK,pygame.Rect(385,710,810,50),line_gap=2)
@@ -329,7 +329,7 @@ class Game:
         self.discard_btn.draw(self.screen, mouse_pos)
 
     def draw_result_panel(self):
-        panel=pygame.Rect(850,430,365,185)
+        panel=pygame.Rect(650,360,300,150)
         pygame.draw.rect(self.screen,WHITE,panel,border_radius=18)
         pygame.draw.rect(self.screen,RED,panel,border_radius=18)
         self.draw_text(self.result_text,self.title_font,RED,1032,480,center=True)
