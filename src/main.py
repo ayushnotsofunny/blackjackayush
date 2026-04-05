@@ -300,7 +300,7 @@ class Game:
         self.draw_hand(hand,x,y+68,hide_first=hide_first)
 
     def draw_message_box(self):
-        msg_box=pygame.Rect(220,560,550,50)
+        msg_box=pygame.Rect(200,540,600,50)
         pygame.draw.rect(self.screen,WHITE,msg_box,width=2,border_radius=14)
         pygame.draw.rect(self.screen,BLACK,msg_box,width=2,border_radius=14)
         self.draw_paragraph(self.message,self.small_font,BLACK,pygame.Rect(240,570,510,35),line_gap=2)
