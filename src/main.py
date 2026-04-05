@@ -177,7 +177,7 @@ class Game:
         self.restart_btn = Button((1020, 40, 190, 50), "Play Again", self.font, bg=RED, fg=WHITE)
         self.start_btn = Button((WIDTH//2 - 150, HEIGHT - 70, 300, 45), "Enter the Kingdom", self.font, bg=RED, fg=WHITE)     
         self.keep_btn = Button((WIDTH-280, 420, 100, 40), "Keep", self.font, bg=RED, fg=WHITE)
-        self.discard_btn = Button((1050, 484, 145, 48), "Discard", self.font, bg=GREY)
+        self.discard_btn = Button((WIDTH-170, 420, 100, 40), "Discard", self.font, bg=GREY)
         self.running = True
         self.show_intro = True
         self.reset_round()
