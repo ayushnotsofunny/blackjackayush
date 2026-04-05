@@ -249,7 +249,7 @@ class Game:
         history_box=pygame.Rect(left_x,390,600,110)
         pygame.draw.rect(self.screen,LIGHT_GREY,history_box,border_radius=18)
         pygame.draw.rect(self.screen,RED,history_box,width=3,border_radius=18)
-        self.draw_text("A Short Story Before the Game",self.section_font,RED,90,558)
+        self.draw_text("A Short Story Before the Game",self.section_font,RED,left_x+20,405)
 
         story_y=596
         for paragrapgh in HISTORY_PARAGRAPHS:
