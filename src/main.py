@@ -470,7 +470,7 @@ class Game:
             self.result_subtext = "Neither side claimed the valley today."
     def draw_ui(self):
         self.draw_table()
-        self.draw_text(TITLE, self.title_font, RED, 56, 46)
+        self.draw_text(TITLE, self.title_font, RED, WIDTH//2, 30, center=True)
         self.draw_text(
             "A respectful fictional card duel inspired by Newar culture",
             self.tiny_font,
@@ -484,8 +484,8 @@ class Game:
             "Malla King",
             self.monster_total_for_display(),
             self.monster.hand,
-            60,
-            132,
+            120,
+            110,
             hide_first=(self.state in ("player_turn", "heart_choice")),
         )
         self.draw_hand_row("Kumari", self.player_total_for_display(), self.player.hand, 60, 430)
