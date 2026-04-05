@@ -246,7 +246,7 @@ class Game:
             )
             y+=14
 
-        history_box=pygame.Rect(68,540,WIDTH-136,150)
+        history_box=pygame.Rect(left_x,390,600,110)
         pygame.draw.rect(self.screen,LIGHT_GREY,history_box,border_radius=18)
         pygame.draw.rect(self.screen,RED,history_box,width=3,border_radius=18)
         self.draw_text("A Short Story Before the Game",self.section_font,RED,90,558)
