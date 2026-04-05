@@ -16,7 +16,7 @@ TITLE="Kumari Vs Malla King"
 
 #This is the Card Layot
 CARD_W, CARD_H=100, 140
-CARD_GAP=90
+CARD_GAP=70
 
 #Color Red Black & Grey: Newari Traditional Colors
 RED=(160,35,35)
@@ -172,8 +172,8 @@ class Game:
         self.symbol_font = pygame.font.SysFont("dejavusans", 40, bold=True)
         self.intro_body_font = pygame.font.SysFont("dejavusans", 17)
         self.intro_small_font = pygame.font.SysFont("dejavusans", 16)
-        self.hit_btn = Button((70, 700, 120, 50), "Hit", self.font, bg=LIGHT_GREY)
-        self.stand_btn = Button((205, 700, 130, 50), "Stand", self.font, bg=GREY)
+        self.hit_btn = Button((120, 500, 100, 40), "Hit", self.font, bg=LIGHT_GREY)
+        self.stand_btn = Button((230, 500, 100, 40), "Stand", self.font, bg=GREY)
         self.restart_btn = Button((1020, 40, 190, 50), "Play Again", self.font, bg=RED, fg=WHITE)
         self.start_btn = Button((465, 728, 350, 54), "Enter the Kingdom", self.font, bg=RED, fg=WHITE)
         self.keep_btn = Button((910, 484, 125, 48), "Keep", self.font, bg=RED, fg=WHITE)
