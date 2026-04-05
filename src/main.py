@@ -303,7 +303,7 @@ class Game:
         msg_box=pygame.Rect(200,540,600,50)
         pygame.draw.rect(self.screen,WHITE,msg_box,width=2,border_radius=14)
         pygame.draw.rect(self.screen,BLACK,msg_box,width=2,border_radius=14)
-        self.draw_paragraph(self.message,self.small_font,BLACK,pygame.Rect(240,570,510,35),line_gap=2)
+        self.draw_paragraph(self.message,self.small_font,BLACK,pygame.Rect(220,550,560,35),line_gap=2)
     
     def draw_heart_panel(self):
         panel=pygame.Rect(WIDTH-300,260,260,220)
