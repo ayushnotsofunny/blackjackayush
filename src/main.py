@@ -306,7 +306,7 @@ class Game:
         self.draw_paragraph(self.message,self.small_font,BLACK,pygame.Rect(240,570,510,35),line_gap=2)
     
     def draw_heart_panel(self):
-        panel=pygame.Rect(865,315,350,255)
+        panel=pygame.Rect(WIDTH-300,260,260,220)
         pygame.draw.rect(self.screen,WHITE,panel,width=3,border_radius=16)
         pygame.draw.rect(self.screen,RED,panel,width=3,border_radius=16)
         self.draw_text("Heart Card Choice",self.font,RED,1040,340,center=True)
