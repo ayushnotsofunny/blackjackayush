@@ -267,7 +267,7 @@ class Game:
     def draw_table(self):
         self.screen.fill(GREY)
         outer=pygame.Rect(18,18,WIDTH-36,HEIGHT-36)
-        inner=pygame.Rect(28,28,WIDTH-56,HEIGHT-56)
+        inner=pygame.Rect(28,50,WIDTH-56,HEIGHT-72)
         pygame.draw.rect(self.screen, BLACK, outer, border_radius=22)
         pygame.draw.rect(self.screen, LIGHT_GREY, inner, border_radius=20)
         pygame.draw.rect(self.screen, RED, inner, width=4, border_radius=20)
