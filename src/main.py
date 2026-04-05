@@ -10,13 +10,13 @@ def get_asset_path(filename: str) -> str:
     return os.path.join(GAME_PATH, "assets",filename)
 
 #This is the Window Setup Dimensions and Game Name 
-WIDTH, HEIGHT=1000,650
+WIDTH, HEIGHT=1280,820
 FPS=60
 TITLE="Kumari Vs Malla King"
 
 #This is the Card Layot
 CARD_W, CARD_H=100, 140
-CARD_GAP=70
+CARD_GAP=112
 
 #Color Red Black & Grey: Newari Traditional Colors
 RED=(160,35,35)
@@ -172,12 +172,12 @@ class Game:
         self.symbol_font = pygame.font.SysFont("dejavusans", 40, bold=True)
         self.intro_body_font = pygame.font.SysFont("dejavusans", 17)
         self.intro_small_font = pygame.font.SysFont("dejavusans", 16)
-        self.hit_btn = Button((120, 500, 100, 40), "Hit", self.font, bg=LIGHT_GREY)
-        self.stand_btn = Button((230, 500, 100, 40), "Stand", self.font, bg=GREY)
+        self.hit_btn = Button((70, 700, 120, 50), "Hit", self.font, bg=LIGHT_GREY)
+        self.stand_btn = Button((205, 700, 130, 50), "Stand", self.font, bg=GREY)
         self.restart_btn = Button((1020, 40, 190, 50), "Play Again", self.font, bg=RED, fg=WHITE)
-        self.start_btn = Button((WIDTH//2 - 150, HEIGHT - 70, 300, 45), "Enter the Kingdom", self.font, bg=RED, fg=WHITE)     
-        self.keep_btn = Button((WIDTH-280, 420, 100, 40), "Keep", self.font, bg=RED, fg=WHITE)
-        self.discard_btn = Button((WIDTH-170, 420, 100, 40), "Discard", self.font, bg=GREY)
+        self.start_btn = Button((465, 728, 350, 54), "Enter the Kingdom", self.font, bg=RED, fg=WHITE)
+        self.keep_btn = Button((910, 484, 125, 48), "Keep", self.font, bg=RED, fg=WHITE)
+        self.discard_btn = Button((1050, 484, 145, 48), "Discard", self.font, bg=GREY)
         self.running = True
         self.show_intro = True
         self.reset_round()
@@ -246,12 +246,12 @@ class Game:
             )
             y+=14
 
-        history_box=pygame.Rect(left_x,390,600,110)
+        history_box=pygame.Rect(68,540,WIDTH-136,150)
         pygame.draw.rect(self.screen,LIGHT_GREY,history_box,border_radius=18)
         pygame.draw.rect(self.screen,RED,history_box,width=3,border_radius=18)
-        self.draw_text("A Short Story Before the Game",self.section_font,RED,left_x+20,405)
+        self.draw_text("A Short Story Before the Game",self.section_font,RED,90,558)
 
-        story_y=435
+        story_y=596
         for paragrapgh in HISTORY_PARAGRAPHS:
             story_y=self.draw_paragraph(
                 paragrapgh,
@@ -267,7 +267,7 @@ class Game:
     def draw_table(self):
         self.screen.fill(GREY)
         outer=pygame.Rect(18,18,WIDTH-36,HEIGHT-36)
-        inner=pygame.Rect(28,50,WIDTH-56,HEIGHT-72)
+        inner=pygame.Rect(28,28,WIDTH-56,HEIGHT-56)
         pygame.draw.rect(self.screen, BLACK, outer, border_radius=22)
         pygame.draw.rect(self.screen, LIGHT_GREY, inner, border_radius=20)
         pygame.draw.rect(self.screen, RED, inner, width=4, border_radius=20)
@@ -300,13 +300,13 @@ class Game:
         self.draw_hand(hand,x,y+68,hide_first=hide_first)
 
     def draw_message_box(self):
-        msg_box=pygame.Rect(200,540,600,50)
+        msg_box=pygame.Rect(365,692,850,74)
         pygame.draw.rect(self.screen,WHITE,msg_box,width=2,border_radius=14)
         pygame.draw.rect(self.screen,BLACK,msg_box,width=2,border_radius=14)
-        self.draw_paragraph(self.message,self.small_font,BLACK,pygame.Rect(220,550,560,35),line_gap=2)
+        self.draw_paragraph(self.message,self.small_font,BLACK,pygame.Rect(385,710,810,50),line_gap=2)
     
     def draw_heart_panel(self):
-        panel=pygame.Rect(WIDTH-300,260,260,220)
+        panel=pygame.Rect(865,315,350,255)
         pygame.draw.rect(self.screen,WHITE,panel,width=3,border_radius=16)
         pygame.draw.rect(self.screen,RED,panel,width=3,border_radius=16)
         self.draw_text("Heart Card Choice",self.font,RED,1040,340,center=True)
@@ -329,7 +329,7 @@ class Game:
         self.discard_btn.draw(self.screen, mouse_pos)
 
     def draw_result_panel(self):
-        panel=pygame.Rect(650,360,300,150)
+        panel=pygame.Rect(850,430,365,185)
         pygame.draw.rect(self.screen,WHITE,panel,border_radius=18)
         pygame.draw.rect(self.screen,RED,panel,border_radius=18)
         self.draw_text(self.result_text,self.title_font,RED,1032,480,center=True)
@@ -470,7 +470,7 @@ class Game:
             self.result_subtext = "Neither side claimed the valley today."
     def draw_ui(self):
         self.draw_table()
-        self.draw_text(TITLE, self.title_font, RED, WIDTH//2, 50, center=True)
+        self.draw_text(TITLE, self.title_font, RED, 56, 46)
         self.draw_text(
             "A respectful fictional card duel inspired by Newar culture",
             self.tiny_font,
@@ -484,11 +484,12 @@ class Game:
             "Malla King",
             self.monster_total_for_display(),
             self.monster.hand,
-            120,
-            110,
+            60,
+            132,
             hide_first=(self.state in ("player_turn", "heart_choice")),
         )
-        self.draw_hand_row("Kumari", self.player_total_for_display(), self.player.hand, 120, 320)
+        self.draw_hand_row("Kumari", self.player_total_for_display(), self.player.hand, 60, 430)
+
 
         self.draw_message_box()
 
