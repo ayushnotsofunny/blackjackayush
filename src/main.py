@@ -574,7 +574,7 @@ class Game:
         sys.exit()
 
                 
-
+# Main game loop
 if __name__=="__main__":
     Game().run()
 
