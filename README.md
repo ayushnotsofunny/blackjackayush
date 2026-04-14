@@ -41,3 +41,29 @@ Competes based on the player's total value
 Python 3
 Pygame
 Object-Oriented Programming Principles
+
+### How to Run
+***Clone the repository***
+git clone https://github.com/your-username/kumari-vs-malla-king.git
+cd kumari-vs-malla-king
+
+***Install Dependencies***
+pip install pygame
+
+***Run the game***
+python main.py
+
+### Controls
+***Hit***:Draw a card
+***Stand***:End the turn
+***Keep/Discard***:Choose outcome for Heart Cards
+***Play Again***:Restart the game
+
+### Cultural Disclaimer
+This game is inspired by Nepali traditions, including the Kumari and Taleju Bhawani.
+
+It is a fictional interpretation created for entertainment purposes and does not aim to represent or alter authentic cultural, historical, or religious beliefs. The project is developed with respect for the cultural significance of these traditions.
+
+###Future Improvements
+
+
