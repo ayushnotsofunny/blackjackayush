@@ -36,3 +36,8 @@ AI Behavior
 The Malla King draws cards based on defined thresholds
 Makes decisions when encountering Heart cards
 Competes based on the player's total value
+
+### Technologies Used
+Python 3
+Pygame
+Object-Oriented Programming Principles
