@@ -43,21 +43,21 @@ Pygame
 Object-Oriented Programming Principles
 
 ### How to Run
-***Clone the repository***
-git clone https://github.com/your-username/kumari-vs-malla-king.git
-cd kumari-vs-malla-king
+***Clone the repository***<br>
+git clone https://github.com/your-username/kumari-vs-malla-king.git<br>
+cd kumari-vs-malla-king<br>
 
-***Install Dependencies***
-pip install pygame
+***Install Dependencies***<br>
+pip install pygame<br>
 
-***Run the game***
-python main.py
+***Run the game***<br>
+python main.py<br>
 
 ### Controls
-***Hit***:Draw a card<br>  
-***Stand***:End the turn<br>
-***Keep/Discard***:Choose outcome for Heart Cards<br>
-***Play Again***:Restart the game<br>
+***Hit*** : Draw a card<br>
+***Stand*** : End the turn<br>
+***Keep/Discard*** : Choose outcome for Heart Cards<br>
+***Play Again*** : Restart the game<br>
 
 ### Cultural Disclaimer
 This game is inspired by Nepali traditions, including the Kumari and Taleju Bhawani.
