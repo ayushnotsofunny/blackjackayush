@@ -54,7 +54,7 @@ pip install pygame
 python main.py
 
 ### Controls
-***Hit***:Draw a card
+***Hit***:Draw a card 
 ***Stand***:End the turn
 ***Keep/Discard***:Choose outcome for Heart Cards
 ***Play Again***:Restart the game
