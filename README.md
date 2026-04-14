@@ -76,6 +76,7 @@ Ayush Adhikari
 Computer Science Student
 Caldwell University
 
-
+### License
+***This project is open source***
 
 
