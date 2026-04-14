@@ -17,3 +17,18 @@ Graphical user interface built using Pygame
 Intro screen with cultural disclaimer and background story
 Continuous gameplay with automatic deck reshuffling
 Strategy-based decisions including hit, stand, and risk management
+
+Game Mechanics
+Basic Rules
+Players draw cards to increase their total value
+The objective is to get as close to 21 as possible without exceeding it
+Exceeding 21 results in an automatic loss
+Heart Card Mechanic
+When a Heart card is drawn, the player has two options:
+Keep the card
+Discard the card and draw a new one
+This introduces an additional strategic decision layer
+AI Behavior
+The Malla King draws cards based on defined thresholds
+Makes decisions when encountering Heart cards
+Competes based on the player's total value
