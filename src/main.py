@@ -101,7 +101,7 @@ class Card:
         return RED if self.suit in ("Hearts","Diamonds") else BLACK
     
     def suit_symbol(self):
-         return {
+         return{
             "Hearts": "♥",
             "Diamonds": "♦",
             "Clubs": "♣",
