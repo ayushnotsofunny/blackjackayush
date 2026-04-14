@@ -154,7 +154,8 @@ class Hand:
 
     def value(self):
         return sum(card.value for card in self.cards)
-    
+
+# Player class holding name and hand
 class Player:
     def __init__(self,name):
         self.name=name
@@ -164,6 +165,7 @@ class MallaKing(Player):
     def __init__(self):
         super().__init__("Malla King")
 
+# Main game controller handling UI, logic, and flow
 class Game:
     def __init__(self):
         pygame.init()
