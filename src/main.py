@@ -252,9 +252,9 @@ class Game:
         self.draw_text("A Short Story Before the Game",self.section_font,RED,90,558)
 
         story_y=596
-        for paragrapgh in HISTORY_PARAGRAPHS:
+        for paragraph in HISTORY_PARAGRAPHS:
             story_y=self.draw_paragraph(
-                paragrapgh,
+                paragraph,
                 self.intro_small_font,
                 BLACK,
                 pygame.Rect(92,story_y,WIDTH-184,70),
