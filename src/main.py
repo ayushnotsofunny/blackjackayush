@@ -67,6 +67,7 @@ HISTORY_PARAGRAPHS = [
     ),
 ]
 
+#Button class for UI Interaction(draw+click detection)
 class Button:
     def __init__(self, rect, text, font, bg=LIGHT_GREY, fg=BLACK):
         self.rect=pygame.Rect(rect)
