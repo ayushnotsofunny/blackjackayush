@@ -1,9 +1,11 @@
+# Main game file for Kumari vs Malla King (Pygame-based card game)
 import os
 import sys
 import random
 import textwrap
 import pygame
 
+#Get current file directory to load assets correctly
 GAME_PATH=os.path.dirname(os.path.abspath(__file__))
 
 def get_asset_path(filename: str) -> str:
