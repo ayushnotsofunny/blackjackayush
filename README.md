@@ -9,3 +9,11 @@ Kumari vs Malla King is a visually interactive card game that blends traditional
 
 Players take on the role of Kumari, making strategic decisions to defeat the Malla King in a turn-based card duel.
 
+### Features
+Custom card system with suits, ranks, and values
+Special Heart card mechanic allowing player choice
+AI-controlled opponent with decision logic
+Graphical user interface built using Pygame
+Intro screen with cultural disclaimer and background story
+Continuous gameplay with automatic deck reshuffling
+Strategy-based decisions including hit, stand, and risk management
