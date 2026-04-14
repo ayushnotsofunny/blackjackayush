@@ -54,14 +54,14 @@ pip install pygame
 python main.py
 
 ### Controls
-***Hit***:Draw a card  
-***Stand***:End the turn  
-***Keep/Discard***:Choose outcome for Heart Cards
-***Play Again***:Restart the game
+***Hit***:Draw a card<br>  
+***Stand***:End the turn<br>
+***Keep/Discard***:Choose outcome for Heart Cards<br>
+***Play Again***:Restart the game<br>
 
 ### Cultural Disclaimer
 This game is inspired by Nepali traditions, including the Kumari and Taleju Bhawani.
-
+<br>
 It is a fictional interpretation created for entertainment purposes and does not aim to represent or alter authentic cultural, historical, or religious beliefs. The project is developed with respect for the cultural significance of these traditions.
 
 ### Future Improvements
