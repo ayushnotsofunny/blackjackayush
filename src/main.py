@@ -463,7 +463,7 @@ class Game:
         else:
             self.end_round("tie")
 
-
+    # Determines winner and displays result
     def end_round(self, winner):
         self.state = "round_over"
 
