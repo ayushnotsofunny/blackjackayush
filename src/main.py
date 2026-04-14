@@ -143,7 +143,8 @@ class Deck:
         if not self.cards:
             self.__init__()
         return self.cards.pop()
-    
+
+# Stores cards for a player    
 class Hand:
     def __init__(self):
         self.cards=[]
