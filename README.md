@@ -64,6 +64,18 @@ This game is inspired by Nepali traditions, including the Kumari and Taleju Bhaw
 
 It is a fictional interpretation created for entertainment purposes and does not aim to represent or alter authentic cultural, historical, or religious beliefs. The project is developed with respect for the cultural significance of these traditions.
 
-###Future Improvements
+### Future Improvements
+Sound effects and background music
+Multiplayer functionality
+Adjustable AI difficulty levels
+Enhanced animations and transitions
+Mobile compatibility
+
+### Author
+Ayush Adhikari
+Computer Science Student
+Caldwell University
+
+
 
 
