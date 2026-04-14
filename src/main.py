@@ -394,8 +394,6 @@ class Game:
             self.state="player_turn"
             self.message=f"Kumari kept {kept}. The path is still open. Hit or Stand"
 
-
-
     def handle_heart_discard(self):
         old=self.pending_heart
         self.pending_heart=None
@@ -409,6 +407,7 @@ class Game:
             self.state="player_turn"
             self.message=f"Kumari discarded {old} and received {new_card}. Hit or Stand."
 
+    # AI logic for Malla King moves
     def run_monster_ai(self):
         now=pygame.time.get_ticks()
         if now<self.monster_timer:
