@@ -90,7 +90,8 @@ class Button:
             and event.button==1
             and self.rect.collidepoint(event.pos)
         )
-    
+
+# Represents a playing card with suit, rank, and value    
 class Card:
     def __init__(self,suit,rank,value):
         self.suit=suit
@@ -110,7 +111,8 @@ class Card:
             "Clubs": "♣",
             "Spades": "♠",
         }[self.suit]
-    
+
+# Creates and shuffles a deck of cards
 class Deck:
     def __init__(self):
         self.cards=[]
