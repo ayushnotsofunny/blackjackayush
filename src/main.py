@@ -358,6 +358,7 @@ class Game:
             return "?"
         return str(self.monster.hand.value())
     
+    # Handles player "Hit" action
     def handle_player_hit(self):
         card=self.deck.draw()
 
