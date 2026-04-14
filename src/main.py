@@ -190,6 +190,7 @@ class Game:
         self.show_intro = True
         self.reset_round()
 
+    # Reset game state for a new round
     def reset_round(self):
         self.deck=Deck()
         self.player=Player("Kumari")
